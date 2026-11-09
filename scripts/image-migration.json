@@ -4909,7 +4909,7 @@
       "url": "https://static.vue-js.com/b4b71a30-443b-11eb-85f6-6fac77c0c9b3.png",
       "path": "docs/assets/images/static.vue-js.com/b4b71a30-443b-11eb-85f6-6fac77c0c9b3.png",
       "references": [
-        "docs/.vuepress/theme/layouts/Layout.vue",
+        "docs/.vitepress/theme/CommunityCard.vue",
         "docs/README.md"
       ],
       "status": "downloaded",

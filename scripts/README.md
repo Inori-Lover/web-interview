@@ -1,6 +1,6 @@
 # 文档图片迁移
 
-图片保存在 `docs/assets/images/<原域名>/`，正文使用相对路径交给 VuePress 打包，适配网站的 `/interview/` 路径。
+图片保存在 `docs/assets/images/<原域名>/`，正文使用相对路径交给 VitePress 打包，适配网站的 `/interview/` 路径。指向图片的文字链接使用 Vue 3 的 `<script setup>` 静态导入。
 
 `image-migration.json` 记录每张图片的原 URL、恢复来源、本地路径、引用文档、大小和 SHA-256。`unresolved` 表示未找到可用原图，文档保留原引用，方便以后补齐。徽章保存的是迁移时的静态副本。
 

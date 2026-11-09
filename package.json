@@ -2,11 +2,21 @@
   "name": "web-interview",
   "version": "1.0.0",
   "description": "web面试题库",
-  "main": "index.js",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.18.0",
+  "engines": {
+    "node": ">=26.13.0 <27",
+    "pnpm": ">=12.18.0 <13"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "dev": "vitepress dev docs --host 127.0.0.1 --port 8080 --strictPort",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs --host 127.0.0.1 --port 8080 --strictPort",
+    "typecheck": "vue-tsc --noEmit",
+    "test": "node --test tests/*.test.mjs",
+    "verify": "node scripts/verify-site.mjs",
+    "check": "pnpm run typecheck && pnpm test && pnpm run build && pnpm run verify"
   },
   "repository": {
     "type": "git",
@@ -23,6 +33,11 @@
   },
   "homepage": "https://github.com/febobo/web-interview#readme",
   "devDependencies": {
-    "vuepress": "^1.7.1"
+    "@types/node": "26.6.6",
+    "typescript": "npm:typescript-native-bridge@6.0.3-bridge.17.tsgo.7.0.2",
+    "vite": "8.3.6",
+    "vitepress": "2.0.0-alpha.21",
+    "vue": "3.6.0-rc.14",
+    "vue-tsc": "3.3.14"
   }
 }

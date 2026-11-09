@@ -203,6 +203,7 @@ def apply_references(records):
         original = path.read_text()
         masked = visible_source(original, path.suffix == ".md")
         edits = []
+        imports = {}
         for match in URL.finditer(masked):
             url = html.unescape(match[0])
             if url not in replacements:
@@ -210,18 +211,28 @@ def apply_references(records):
             relative = os.path.relpath(replacements[url], path.parent).replace(os.sep, "/")
             if not relative.startswith("."):
                 relative = "./" + relative
-            # Markdown image links are processed by webpack. Plain links to an
-            # image need require() too, otherwise they point into source folders.
+            # Import linked image assets explicitly so Vite includes them in the build.
             prefix = original[:match.start()]
             link = re.search(r"(?<!!)\[([^\]\n]+)\]\($", prefix) if path.suffix == ".md" else None
             if link and original[match.end():].startswith(")"):
                 label = html.escape(link[1])
-                edits.append((link.start(), match.end() + 1, f'<a :href="require(\'{relative}\')">{label}</a>'))
+                binding = "imageLink" + hashlib.sha256(url.encode()).hexdigest()[:12]
+                imports[binding] = relative
+                edits.append((link.start(), match.end() + 1, f'<a :href="{binding}">{label}</a>'))
             else:
                 edits.append((match.start(), match.end(), relative))
         updated = original
         for start, end, replacement in reversed(edits):
             updated = updated[:start] + replacement + updated[end:]
+        if imports:
+            statements = "\n".join(f"import {binding} from {json.dumps(relative)}" for binding, relative in imports.items())
+            setup = re.search(r"<script\s+setup(?:\s[^>]*)?>", visible_source(updated, True))
+            if setup:
+                updated = updated[:setup.end()] + "\n" + statements + updated[setup.end():]
+            else:
+                frontmatter = re.match(r"\A---\n[\s\S]*?\n---(?:\n|$)", updated)
+                position = frontmatter.end() if frontmatter else 0
+                updated = updated[:position] + f"\n<script setup>\n{statements}\n</script>\n\n" + updated[position:]
         if updated != original:
             path.write_text(updated)
             changed += 1
