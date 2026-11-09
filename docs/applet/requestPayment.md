@@ -1,6 +1,6 @@
 # 面试官：说说微信小程序的支付流程？
 
- ![](https://static.vue-js.com/2266fff0-34a0-11ec-8e64-91fdec0f05a1.png)
+ ![](../assets/images/static.vue-js.com/2266fff0-34a0-11ec-8e64-91fdec0f05a1.png)
 
 
 
@@ -12,9 +12,9 @@
 
 场景如下图所示：
 
- ![](https://static.vue-js.com/6e0cff40-34a0-11ec-a752-75723a64e8f5.png)
+ ![](../assets/images/static.vue-js.com/6e0cff40-34a0-11ec-a752-75723a64e8f5.png)
 
- ![](https://static.vue-js.com/34864830-34a0-11ec-8e64-91fdec0f05a1.png)
+ ![](../assets/images/static.vue-js.com/34864830-34a0-11ec-8e64-91fdec0f05a1.png)
 
 - 用户通过分享或扫描二维码进入商户小程序，用户选择购买，完成选购流程
 - 调起微信支付控件，用户开始输入支付密码
@@ -30,7 +30,7 @@
 
 支付流程图如下所示：
 
- ![](https://static.vue-js.com/76b66780-34a0-11ec-8e64-91fdec0f05a1.png)
+ ![](../assets/images/static.vue-js.com/76b66780-34a0-11ec-8e64-91fdec0f05a1.png)
 
 具体的做法：
 
@@ -69,7 +69,7 @@ wx.requestPayment({
 参数表如下所示：
 
 
-![](https://files.mdnice.com/user/155/48efed1f-d67f-45a7-ab2c-89a6424fafa0.png)
+![](../assets/images/files.mdnice.com/48efed1f-d67f-45a7-ab2c-89a6424fafa0.png)
 
 
 

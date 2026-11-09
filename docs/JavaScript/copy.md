@@ -1,6 +1,6 @@
 # 面试官：深拷贝浅拷贝的区别？如何实现一个深拷贝？
 
- ![](https://static.vue-js.com/cdf952e0-69b8-11eb-85f6-6fac77c0c9b3.png)
+ ![](../assets/images/static.vue-js.com/cdf952e0-69b8-11eb-85f6-6fac77c0c9b3.png)
 
 ## 一、数据类型存储
 

@@ -362,6 +362,11 @@ module.exports = {
       },
     ],
   },
+  chainWebpack(config) {
+    config.module
+      .rule("images")
+      .test(/\.(png|jpe?g|gif|webp)(\?.*)?$/i);
+  },
   markdown: {
     lineNumbers: true,
   },

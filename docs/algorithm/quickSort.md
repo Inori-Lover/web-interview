@@ -2,7 +2,7 @@
 
 
 
- ![](https://static.vue-js.com/bafae570-268a-11ec-8e64-91fdec0f05a1.png)
+ ![](../assets/images/static.vue-js.com/bafae570-268a-11ec-8e64-91fdec0f05a1.png)
 
 ## 一、是什么
 
@@ -35,7 +35,7 @@
 - 分区：从数组中选择任意一个基准，所有比基准小的元素放在基准的左边，比基准大的元素放到基准的右边
 - 递归：递归地对基准前后的子数组进行分区
 
-![](https://www.runoob.com/wp-content/uploads/2019/03/quickSort.gif)
+![](../assets/images/www.runoob.com/quickSort.gif)
 
 用代码表示则如下：
 
@@ -65,7 +65,7 @@ function quickSort (arr) {
 
 最好情况下是`O(nlogn)`，其中递归算法的时间复杂度公式：`T[n] = aT[n/b] + f(n)`，推导如下所示：
 
- ![](https://static.vue-js.com/b6019540-2b5e-11ec-8e64-91fdec0f05a1.png)
+ ![](../assets/images/static.vue-js.com/b6019540-2b5e-11ec-8e64-91fdec0f05a1.png)
 
 关于上述代码实现的快速排序，可以看到是稳定的
 

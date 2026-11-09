@@ -1,6 +1,6 @@
 # 面试官：说说你对冒泡排序的理解？如何实现？应用场景？
 
- ![](https://static.vue-js.com/6f5e0850-2652-11ec-a752-75723a64e8f5.png)
+ ![](../assets/images/static.vue-js.com/6f5e0850-2652-11ec-a752-75723a64e8f5.png)
 
 
 ## 一、是什么
@@ -22,11 +22,11 @@
 
 最终第 1 趟排序的结果变成了 99、12、35、76、18，如下图所示：
 
- ![](https://static.vue-js.com/7a363770-2652-11ec-8e64-91fdec0f05a1.png)
+ ![](../assets/images/static.vue-js.com/7a363770-2652-11ec-8e64-91fdec0f05a1.png)
 
 上述可以看到，经过第一趟的排序，可以得到最大的元素，接下来第二趟排序则对剩下的的4个元素进行排序，如下图所示：
 
- ![](https://static.vue-js.com/84b9ddf0-2652-11ec-a752-75723a64e8f5.png)
+ ![](../assets/images/static.vue-js.com/84b9ddf0-2652-11ec-a752-75723a64e8f5.png)
 
 经过第 2 趟排序，结果为 99、76、12、35、18
 
@@ -45,7 +45,7 @@
 - 针对所有的元素重复以上的步骤，除了最后一个
 - 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较
 
-![](https://www.runoob.com/wp-content/uploads/2019/03/bubbleSort.gif)
+![](../assets/images/www.runoob.com/bubbleSort.gif)
 
 用代码表示则如下：
 

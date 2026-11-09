@@ -54,7 +54,7 @@ JavaScript中数组的主要问题时，它们被实现成了对象，
 使用条件：
 链表几乎可以用在任何可以使用一维数组的情况中。
 如果需要随机访问，数组仍然是更好的选择。
-![](https://raw.githubusercontent.com/zoro-web/blog/master/img/lian.jpg)
+![](../assets/images/raw.githubusercontent.com/lian.jpg)
 
 ## 字典
 字典是一种以键-值对存储数据的数据结构，js中的Object类就是以字典的形式设计的。JavaScript可以通过实现字典类，让这种字典类型的对象使用起来更加简单，字典可以实现对象拥有的常见功能，并相应拓展自己想要的功能，而对象在JavaScript编写中随处可见，所以字典的作用也异常明显了。
@@ -72,6 +72,6 @@ JavaScript中数组的主要问题时，它们被实现成了对象，
 即使使用一个高效的散列函数，依然存在将两个键映射为同一个值得可能，这种现象叫做碰撞。常见碰撞的处理方法有：开链法和线性探测法（具体概念有兴趣的可以网上自信了解）
 使用条件：
 可以用于数据的插入、删除和取用，不适用于查找数据
-![](https://raw.githubusercontent.com/zoro-web/blog/master/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170820211406.png)
+![](../assets/images/raw.githubusercontent.com/----_20170820211406.png)
 
 
