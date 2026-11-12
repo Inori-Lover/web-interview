@@ -25,12 +25,3 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Check types, navigation, search, and build output
         run: pnpm run check
-      - name: Deploy
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        uses: easingthemes/ssh-deploy@v6.0.1
-        with:
-          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-          SOURCE: docs/.vitepress/dist/
-          REMOTE_HOST: ${{ secrets.HOST }}
-          REMOTE_USER: root
-          TARGET: ${{ secrets.PATH }}

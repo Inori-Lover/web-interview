@@ -6,7 +6,7 @@ export default defineConfig({
   lang: 'zh-CN',
   title: '前端面试题库',
   description: 'Vue、React、JavaScript、CSS、网络、工程化与算法，235 篇前端面试问答。',
-  base: '/interview/',
+  base: '/',
   cleanUrls: false,
   vite: {
     server: {

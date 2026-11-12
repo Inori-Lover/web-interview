@@ -29,7 +29,7 @@ mise exec -- pnpm install --frozen-lockfile
 mise exec -- pnpm dev
 ```
 
-打开 <http://127.0.0.1:8080/interview/>。也可以直接使用表格中的 Node.js 和 pnpm 版本运行相同命令。
+打开 <http://127.0.0.1:8080/>。也可以直接使用表格中的 Node.js 和 pnpm 版本运行相同命令。
 
 ## 检查与构建
 
@@ -38,9 +38,24 @@ pnpm run check
 pnpm preview
 ```
 
-`check` 包含 Vue/TypeScript 类型检查、导航与中文搜索测试、生产构建，以及页面链接和本地图片校验。单独构建使用 `pnpm build`，输出目录为 `docs/.vitepress/dist/`，部署前缀为 `/interview/`。
+`check` 包含 Vue/TypeScript 类型检查、导航与中文搜索测试、生产构建，以及页面链接和本地图片校验。单独构建使用 `pnpm build`，输出目录为 `docs/.vitepress/dist/`，部署在域名根路径 `/`。
 
-CI 会检查 Pull Request 与 `master` 推送；`master` 推送检查成功后，沿用原项目的 SSH 目标部署新输出目录。
+CI 会检查 Pull Request 与 `master` 推送，不再执行原项目的 SSH 部署。
+
+## Cloudflare Pages 部署
+
+连接 GitHub 仓库 `Inori-Lover/web-interview`，使用以下构建配置：
+
+| 设置 | 值 |
+| --- | --- |
+| Production branch | `master` |
+| Root directory | 仓库根目录（留空） |
+| Build command | `pnpm run check` |
+| Build output directory | `docs/.vitepress/dist` |
+| `NODE_VERSION` | `26.13.0` |
+| `PNPM_VERSION` | `12.18.0` |
+
+构建环境变量同时用于 Production 和 Preview。部署成功后，在 Pages 项目的 **Custom domains** 中添加 `interview.inori-lover.com`，按提示确认 DNS 记录；不要只单独添加 DNS CNAME。连接 Git 集成后，推送 `master` 会自动构建并部署。
 
 ## 目录
 

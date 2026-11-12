@@ -9,7 +9,7 @@ import { tokenizeChinese } from '../docs/.vitepress/search.ts'
 const root = fileURLToPath(new URL('../', import.meta.url))
 const docs = resolve(root, 'docs')
 const dist = resolve(docs, '.vitepress/dist')
-const base = '/interview/'
+const base = '/'
 
 async function walk(directory, excluded = []) {
   const files = []
